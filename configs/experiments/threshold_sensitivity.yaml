@@ -1,0 +1,23 @@
+experiment:
+  id: E02
+  name: threshold_sensitivity
+results:
+  root: results
+# Synthetic fixture keeps CI deterministic; replace dataset.path in real runs.
+dataset:
+  name: manuscript_fixture
+  size: 24
+  seed: 7
+prompt:
+  template: 'Classify: {text}'
+  n_shot: 0
+model:
+  name: reference-model
+  score_scale: 1.0
+depthrank:
+  threshold: 0.65
+mi:
+  mask_fraction: 0.15
+statistics:
+  bootstrap_samples: 50
+  seed: 13
